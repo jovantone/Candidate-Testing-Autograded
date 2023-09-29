@@ -18,6 +18,12 @@ let questions = [
 ];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
+let newNumberCorrect = 0;
+let numberCorrect = 0;
+let numberOfQuestions = 5;
+
+
+
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -38,7 +44,60 @@ function gradeQuiz(candidateAnswers) {
     `Here are the candidates answers: ${candidateAnswers}\nAnd here are the correct answers: ${correctAnswers}`
   );
 
-  let grade; //TODO 3.2 use this variable to calculate the candidates score.
+//TODO 3.2 use this variable to calculate the candidates score.
+
+  if (candidateAnswers[0] == correctAnswers[0]) {
+    newNumberCorrect = numberCorrect + 1;
+  }
+
+  if (candidateAnswers[1] == correctAnswers[1]) {
+    newNumberCorrect = numberCorrect + 2;
+  }
+
+  if (candidateAnswers[2] == correctAnswers[2]) {
+    newNumberCorrect = numberCorrect + 3;
+  }
+
+  if (candidateAnswers[3] == correctAnswers[3]) {
+    newNumberCorrect = numberCorrect + 4;
+  }
+
+  if (candidateAnswers[4] == correctAnswers[4]) {
+    newNumberCorrect = numberCorrect + 5;
+  }
+
+  if (newNumberCorrect === 5) {
+    console.log(`You have scored 100%`);
+  }
+
+  if (newNumberCorrect === 4) {
+    console.log(`You have scored 80%`);
+  }
+
+  if (newNumberCorrect === 3) {
+    console.log(`You have scored 60%`);
+  }
+
+  if (newNumberCorrect === 2) {
+    console.log(`You have scored 40%`);
+  }
+
+  if (newNumberCorrect === 1) {
+    console.log(`You have scored 20%`);
+  }
+  if (newNumberCorrect === 0) {
+    console.log(`Zero questions right, YOU FAILED.`);
+  }
+
+let grade = (numberOfQuestions / newNumberCorrect) * 100;
+console.log(grade);
+
+
+
+
+
+
+
 
   return grade;
 }
